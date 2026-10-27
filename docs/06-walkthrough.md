@@ -8,17 +8,23 @@
 
 ## ภาพรวม: ทั้งหมดมี 8 ขั้น
 
+```mermaid
+flowchart LR
+    S1["1. questions.md"] --> S2["2. ontology.md"] --> S3["3. entities.csv"] --> S4["4. triples.csv<br/>+ docs/"]
+    S4 --> S5["5. ingest-csv"] --> S6["6. ingest<br/>เอกสาร"]
+    S6 --> S7["7. ask · impact<br/>· viz"] --> S8{"8. eval<br/>ผ่าน ≥ 80%?"}
+    S8 -->|"ผ่าน"| DONE(["✅ ขยายไป<br/>flow ถัดไป"])
+    S8 -.->|"ไม่ผ่าน: แก้ข้อมูลขั้น 2–4 (ไม่ใช่แก้โค้ด)"| S2
+
+    classDef people fill:#fff4d6,stroke:#d4a017
+    classDef cmd fill:#e3effd,stroke:#3b82f6
+    classDef check fill:#e6f6ea,stroke:#22a447
+    class S1,S2,S3,S4 people
+    class S5,S6,S7 cmd
+    class S8,DONE check
 ```
- เตรียม (คน)                          สร้างกราฟ (คำสั่ง)              ใช้งาน + ตรวจ
-┌──────────────────────────┐      ┌──────────────────────┐      ┌───────────────────┐
-│ 1. questions.md          │      │ 5. ingest-csv        │      │ 7. ask / impact   │
-│ 2. ontology.md           │ ───▶ │ 6. ingest (เอกสาร)    │ ───▶ │ 8. eval + viz     │
-│ 3. entities.csv          │      │                      │      │                   │
-│ 4. triples.csv (+ docs/) │      │                      │      │                   │
-└──────────────────────────┘      └──────────────────────┘      └─────────┬─────────┘
-            ▲                                                            │
-            └────────────── ตอบผิด → แก้ข้อมูล (ไม่ใช่แก้โค้ด) ◀──────────────┘
-```
+
+🟨 คนเตรียม · 🟦 รันคำสั่ง · 🟩 ตรวจผล
 
 | ขั้น | ทำอะไร | ใครทำ | ใช้ LLM? |
 |---|---|---|---|

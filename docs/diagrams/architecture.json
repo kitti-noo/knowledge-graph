@@ -1,0 +1,407 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "knowledge-graph: สถาปัตยกรรม",
+    "output": "docs/diagrams/architecture.html",
+    "quality_profile": "showcase",
+    "legend": {
+      "entries": {
+        "frontend": {
+          "label": "ผลลัพธ์ (คำสั่ง)"
+        },
+        "backend": {
+          "label": "engine"
+        },
+        "database": {
+          "label": "ไฟล์ / ที่เก็บ"
+        },
+        "security": {
+          "label": "ด่านตรวจ"
+        },
+        "external": {
+          "label": "ภายนอก: LLM · คน"
+        }
+      }
+    }
+  },
+  "components": [
+    {
+      "id": "docs-in",
+      "type": "database",
+      "label": "เอกสาร",
+      "sublabel": "docs/*.md · sample.txt",
+      "pos": [
+        40,
+        60
+      ],
+      "size": [
+        150,
+        64
+      ]
+    },
+    {
+      "id": "csv-in",
+      "type": "database",
+      "label": "triples.csv",
+      "sublabel": "ตารางความสัมพันธ์",
+      "pos": [
+        40,
+        200
+      ],
+      "size": [
+        150,
+        64
+      ]
+    },
+    {
+      "id": "rules-in",
+      "type": "database",
+      "label": "กติกา",
+      "sublabel": "ontology.md + entities.csv",
+      "pos": [
+        40,
+        340
+      ],
+      "size": [
+        150,
+        64
+      ]
+    },
+    {
+      "id": "curator",
+      "type": "external",
+      "icon": "person",
+      "label": "คนดูแลข้อมูล",
+      "sublabel": "ตัดสิน entity ใหม่ · แก้ไฟล์",
+      "pos": [
+        40,
+        480
+      ],
+      "size": [
+        170,
+        64
+      ]
+    },
+    {
+      "id": "extract",
+      "type": "backend",
+      "label": "extract.py",
+      "sublabel": "chunk → LLM ดึง triples",
+      "pos": [
+        300,
+        60
+      ],
+      "size": [
+        170,
+        64
+      ]
+    },
+    {
+      "id": "domain",
+      "type": "security",
+      "label": "domain.py",
+      "sublabel": "ตรวจชื่อ · ทิศทาง · relation",
+      "tag": "ไม่มี ontology = ผ่านตรง",
+      "pos": [
+        300,
+        200
+      ],
+      "size": [
+        170,
+        64
+      ]
+    },
+    {
+      "id": "graph",
+      "type": "database",
+      "label": "graph.py",
+      "sublabel": "NetworkX → graph.json",
+      "pos": [
+        580,
+        200
+      ],
+      "size": [
+        160,
+        64
+      ]
+    },
+    {
+      "id": "query",
+      "type": "backend",
+      "label": "query.py",
+      "sublabel": "seeds → k-hop facts → คำตอบ",
+      "tag": "GraphRAG",
+      "pos": [
+        840,
+        200
+      ],
+      "size": [
+        170,
+        64
+      ]
+    },
+    {
+      "id": "llm",
+      "type": "external",
+      "label": "Ollama LLM",
+      "sublabel": "KG_MODEL",
+      "pos": [
+        1080,
+        60
+      ],
+      "size": [
+        140,
+        64
+      ]
+    },
+    {
+      "id": "impact",
+      "type": "frontend",
+      "label": "impact",
+      "sublabel": "ถ้า X ล่ม กระทบใคร",
+      "pos": [
+        500,
+        360
+      ],
+      "size": [
+        150,
+        64
+      ]
+    },
+    {
+      "id": "viz",
+      "type": "frontend",
+      "label": "viz · stats",
+      "sublabel": "graph.html · node เด่น",
+      "pos": [
+        680,
+        360
+      ],
+      "size": [
+        140,
+        64
+      ]
+    },
+    {
+      "id": "ask",
+      "type": "frontend",
+      "label": "ask",
+      "sublabel": "คำตอบ + เส้นทาง",
+      "pos": [
+        1080,
+        200
+      ],
+      "size": [
+        140,
+        64
+      ]
+    },
+    {
+      "id": "eval",
+      "type": "frontend",
+      "label": "eval",
+      "sublabel": "PASS / FAIL",
+      "pos": [
+        840,
+        480
+      ],
+      "size": [
+        170,
+        64
+      ]
+    },
+    {
+      "id": "questions-in",
+      "type": "database",
+      "label": "questions.md",
+      "sublabel": "คำถาม + คำตอบที่ถูก",
+      "pos": [
+        1080,
+        480
+      ],
+      "size": [
+        140,
+        64
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "ข้อมูลเข้า (--domain)",
+      "wraps": [
+        "docs-in",
+        "csv-in",
+        "rules-in"
+      ]
+    },
+    {
+      "kind": "region",
+      "label": "kg/ (engine)",
+      "wraps": [
+        "extract",
+        "domain",
+        "graph",
+        "query"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "ingest-docs",
+      "from": "docs-in",
+      "to": "extract",
+      "label": "A1 ingest"
+    },
+    {
+      "id": "extract-llm",
+      "from": "extract",
+      "to": "llm",
+      "label": "A2 prompt + ontology",
+      "variant": "dashed",
+      "fromSide": "right",
+      "toSide": "left",
+      "route": "straight"
+    },
+    {
+      "id": "extract-domain",
+      "from": "extract",
+      "to": "domain",
+      "label": "A3 triples"
+    },
+    {
+      "id": "ingest-csv",
+      "from": "csv-in",
+      "to": "domain",
+      "label": "A1 ingest-csv",
+      "variant": "emphasis"
+    },
+    {
+      "id": "rules-check",
+      "from": "rules-in",
+      "to": "domain",
+      "label": "A3 ใช้ตรวจ",
+      "variant": "security",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "domain-graph",
+      "from": "domain",
+      "to": "graph",
+      "label": "A4 ผ่านตรวจ",
+      "variant": "emphasis"
+    },
+    {
+      "id": "domain-query",
+      "from": "domain",
+      "to": "query",
+      "label": "B1 aliases + ความหมาย relation",
+      "variant": "security",
+      "fromSide": "top",
+      "toSide": "top"
+    },
+    {
+      "id": "graph-query",
+      "from": "graph",
+      "to": "query",
+      "label": "B2 facts",
+      "variant": "emphasis"
+    },
+    {
+      "id": "query-llm",
+      "from": "query",
+      "to": "llm",
+      "label": "B1·B3 หา seed · ตอบ",
+      "variant": "dashed"
+    },
+    {
+      "id": "query-ask",
+      "from": "query",
+      "to": "ask",
+      "variant": "emphasis",
+      "label": "B4"
+    },
+    {
+      "id": "graph-impact",
+      "from": "graph",
+      "to": "impact",
+      "label": "B เดินกราฟ"
+    },
+    {
+      "id": "graph-viz",
+      "from": "graph",
+      "to": "viz"
+    },
+    {
+      "id": "query-eval",
+      "from": "query",
+      "to": "eval",
+      "label": "C1 ตอบทุกข้อ"
+    },
+    {
+      "id": "questions-eval",
+      "from": "questions-in",
+      "to": "eval",
+      "label": "C1 ข้อสอบ"
+    },
+    {
+      "id": "domain-curator",
+      "from": "domain",
+      "to": "curator",
+      "label": "C2 entity ใหม่",
+      "variant": "dashed",
+      "fromSide": "bottom",
+      "toSide": "right"
+    },
+    {
+      "id": "eval-curator",
+      "from": "eval",
+      "to": "curator",
+      "label": "C2 FAIL",
+      "variant": "dashed",
+      "fromSide": "left",
+      "toSide": "right"
+    },
+    {
+      "id": "curator-rules",
+      "from": "curator",
+      "to": "rules-in",
+      "label": "C3 แก้ไฟล์",
+      "fromSide": "top",
+      "toSide": "bottom"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "A. สร้างกราฟ",
+      "items": [
+        "A1 ข้อมูลเข้า: ตาราง (ไม่ใช้ LLM) หรือเอกสาร",
+        "A2 LLM ดึง triples จากเอกสาร",
+        "A3 domain.py ตรวจกับกติกา",
+        "A4 เก็บลงกราฟ"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "B. ใช้งาน",
+      "items": [
+        "B1 LLM หา seed (ใช้ aliases ช่วย)",
+        "B2 เดินกราฟ k-hop ได้ facts",
+        "B3 LLM ตอบจาก facts เท่านั้น",
+        "B4 คำตอบ + เส้นทาง · impact/viz ไม่ใช้ LLM"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "C. ดูแลข้อมูล (คนอยู่ในวง)",
+      "items": [
+        "C1 eval ถามทุกข้อใน questions.md",
+        "C2 entity ใหม่ หรือ FAIL ส่งให้คน",
+        "C3 คนแก้ไฟล์ แล้ววนกลับไป A"
+      ]
+    }
+  ]
+}

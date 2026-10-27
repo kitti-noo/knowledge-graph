@@ -1,14 +1,47 @@
 # 2. Pipeline ใน repo นี้
 
-```
-                 ┌────────── ingest ──────────┐
-sample.txt ─▶ chunk ─▶ LLM extract ─▶ triples ─▶ build graph ─▶ graph.json
-                  extract.py                          graph.py
+ภาพรวมทั้งระบบอยู่ใน [README → Architecture](../README.md#architecture) บทนี้จะเจาะลงไปทีละขั้น
 
-                 ┌──────────────────── ask ─────────────────────┐
-question ─▶ find seeds (LLM) ─▶ k-hop subgraph ─▶ facts ─▶ LLM answer
-            query.py              graph.py                 query.py
+### Ingest: ข้อมูล → กราฟ
+
+```mermaid
+flowchart LR
+    TXT["เอกสาร<br/>sample.txt · docs/*.md"] --> CH["chunk()<br/>ตัดตามย่อหน้า<br/>≤ 1500 ตัวอักษร"]
+    CH --> LLM["🤖 LLM<br/>extract_triples()"]
+    LLM --> T1["triples<br/>(subject, relation, object)"]
+
+    CSV["triples.csv"] --> LT["load_triples()<br/>ไม่ใช้ LLM"]
+    LT --> T2["triples"]
+
+    T1 --> CHK{"มี ontology?"}
+    CHK -->|"มี"| F["filter_extracted()<br/>แปลงชื่อเล่น · ทิ้งที่ผิดกติกา<br/>รายงาน entity ใหม่"]
+    CHK -->|"ไม่มี"| B
+    F --> B["build()<br/>key() รวมชื่อเดียวกันเป็น node เดียว<br/>กัน edge ซ้ำ"]
+    T2 --> B
+    B --> G[("graph.json")]
 ```
+
+### Ask: คำถาม → คำตอบ
+
+```mermaid
+sequenceDiagram
+    actor U as ผู้ใช้
+    participant Q as query.py
+    participant L as 🤖 LLM
+    participant G as graph.py
+
+    U->>Q: "ประเพณีที่ตรงกับยี่เป็ง<br/>มีต้นกำเนิดที่จังหวัดใด"
+    Q->>L: 1) คำถาม + รายชื่อ node ทั้งหมด
+    L-->>Q: seeds = [ประเพณียี่เป็ง]
+    Q->>G: 2) subgraph_facts(seeds, hops=2)
+    Note over G: ego_graph: เก็บทุก node<br/>ที่ห่างจาก seed ≤ 2 ก้าว
+    G-->>Q: facts (บรรทัดละ 1 triple)
+    Q->>L: 3) facts + คำถาม<br/>"ตอบจาก facts เท่านั้น"
+    L-->>Q: คำตอบ + เส้นทางที่เดิน
+    Q-->>U: จังหวัดสุโขทัย<br/>ยี่เป็ง → ลอยกระทง → สุโขทัย
+```
+
+LLM ถูกเรียก 2 ครั้ง คือตอนหา seed และตอนตอบ ส่วน **การค้นหาข้อมูล (ขั้นที่ 2) เป็นการเดินกราฟล้วนๆ** นี่คือจุดที่ GraphRAG ต่างจาก vector RAG ([บทที่ 3](03-graphrag-vs-rag.md))
 
 | ไฟล์ | หน้าที่ |
 |---|---|
@@ -16,7 +49,8 @@ question ─▶ find seeds (LLM) ─▶ k-hop subgraph ─▶ facts ─▶ LLM a
 | [kg/extract.py](../kg/extract.py) | ขั้นที่ 1: ข้อความ → triples |
 | [kg/graph.py](../kg/graph.py) | ขั้นที่ 2: triples → กราฟ NetworkX รวมถึง save/load, k-hop และ visualize |
 | [kg/query.py](../kg/query.py) | ขั้นที่ 3: คำถาม → คำตอบ (GraphRAG) |
-| [main.py](../main.py) | CLI: `ingest`, `ask`, `viz`, `stats` |
+| [kg/domain.py](../kg/domain.py) | ตรวจข้อมูลกับ ontology/entities และโหลด CSV (ใช้ในบทที่ 5–6) |
+| [main.py](../main.py) | CLI: `ingest`, `ingest-csv`, `ask`, `impact`, `eval`, `viz`, `stats` |
 
 ---
 

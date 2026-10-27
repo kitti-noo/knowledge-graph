@@ -6,7 +6,7 @@
 |---|---|---|
 | 1 | [Knowledge Graph คืออะไร](01-what-is-kg.md) | node, edge, triple, ontology และทำไมต้องเก็บข้อมูลเป็นกราฟ |
 | 2 | [Pipeline ใน repo นี้](02-pipeline.md) | ข้อความ → triples → กราฟ → คำตอบ ทีละขั้นพร้อมโค้ด |
-| 3 | [GraphRAG vs Vector RAG](03-graphrag-vs-rag.md) | multi-hop คืออะไร และเมื่อไหร่ควรใช้กราฟ |
+| 3 | [GraphRAG vs Vector RAG](03-graphrag-vs-rag.md) | multi-hop คืออะไร, service ของแต่ละแบบ (embedding, reranker, graph DB …) และเมื่อไหร่ควรใช้กราฟ |
 | 4 | [ข้อจำกัดและสิ่งที่ควรทำต่อ](04-limitations.md) | ปัญหาจริงที่เจอในกราฟตัวอย่าง และวิธีแก้ |
 | 5 | [เริ่มทำ KG ของตัวเอง](05-start-your-own.md) | สำหรับคนมีไอเดีย: ต้องเตรียมคำถาม ข้อมูล ontology อะไร รูปแบบไฟล์แต่ละไฟล์ |
 | 6 | [ลงมือทำ: ระบบค้าปลีกตั้งแต่ต้นจนจบ](06-walkthrough.md) | 8 ขั้น ใครทำอะไร รันคำสั่งไหน ควรเห็นผลอะไร และตอบผิดแล้วแก้ตรงไหน (ตัวอย่างใน [examples/retail-demo/](../examples/retail-demo/) รันได้จริง) |
