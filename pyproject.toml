@@ -1,0 +1,10 @@
+[project]
+name = "knowledge-graph"
+version = "0.1.0"
+description = "Playground: build a knowledge graph from text with an LLM, then query it (GraphRAG)"
+requires-python = ">=3.11"
+dependencies = [
+    "ollama>=0.4",
+    "networkx>=3.3",
+    "pyvis>=0.3.2",
+]

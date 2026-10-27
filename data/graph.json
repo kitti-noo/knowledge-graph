@@ -1,0 +1,322 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "Marie Curie",
+      "type": "Person",
+      "id": "marie curie"
+    },
+    {
+      "label": "Warsaw",
+      "type": "Place",
+      "id": "warsaw"
+    },
+    {
+      "label": "1867",
+      "type": "Date",
+      "id": "1867"
+    },
+    {
+      "label": "University of Paris",
+      "type": "Organization",
+      "id": "university of paris"
+    },
+    {
+      "label": "Pierre Curie",
+      "type": "Person",
+      "id": "pierre curie"
+    },
+    {
+      "label": "1895",
+      "type": "Date",
+      "id": "1895"
+    },
+    {
+      "label": "polonium",
+      "type": "Concept",
+      "id": "polonium"
+    },
+    {
+      "label": "radium",
+      "type": "Concept",
+      "id": "radium"
+    },
+    {
+      "label": "Poland",
+      "type": "Place",
+      "id": "poland"
+    },
+    {
+      "label": "Nobel Prize in Physics",
+      "type": "Award",
+      "id": "nobel prize in physics"
+    },
+    {
+      "label": "Henri Becquerel",
+      "type": "Person",
+      "id": "henri becquerel"
+    },
+    {
+      "label": "1903",
+      "type": "Date",
+      "id": "1903"
+    },
+    {
+      "label": "radioactivity",
+      "type": "Concept",
+      "id": "radioactivity"
+    },
+    {
+      "label": "1896",
+      "type": "Date",
+      "id": "1896"
+    },
+    {
+      "label": "Nobel Prize in Chemistry",
+      "type": "Award",
+      "id": "nobel prize in chemistry"
+    },
+    {
+      "label": "1911",
+      "type": "Date",
+      "id": "1911"
+    },
+    {
+      "label": "Irène Joliot-Curie",
+      "type": "Person",
+      "id": "irène joliot-curie"
+    },
+    {
+      "label": "Frédéric Joliot",
+      "type": "Person",
+      "id": "frédéric joliot"
+    },
+    {
+      "label": "artificial radioactivity",
+      "type": "Concept",
+      "id": "artificial radioactivity"
+    },
+    {
+      "label": "1935",
+      "type": "Date",
+      "id": "1935"
+    },
+    {
+      "label": "Radium Institute",
+      "type": "Organization",
+      "id": "radium institute"
+    },
+    {
+      "label": "Paris",
+      "type": "Place",
+      "id": "paris"
+    }
+  ],
+  "edges": [
+    {
+      "relation": "BORN_IN",
+      "source_chunk": 0,
+      "source": "marie curie",
+      "target": "warsaw",
+      "key": 0
+    },
+    {
+      "relation": "BORN_ON",
+      "source_chunk": 0,
+      "source": "marie curie",
+      "target": "1867",
+      "key": 0
+    },
+    {
+      "relation": "STUDIED_AT",
+      "source_chunk": 0,
+      "source": "marie curie",
+      "target": "university of paris",
+      "key": 0
+    },
+    {
+      "relation": "MARRIED_TO",
+      "source_chunk": 0,
+      "source": "marie curie",
+      "target": "pierre curie",
+      "key": 0
+    },
+    {
+      "relation": "MARRIED_ON",
+      "source_chunk": 0,
+      "source": "marie curie",
+      "target": "1895",
+      "key": 0
+    },
+    {
+      "relation": "DISCOVERED",
+      "source_chunk": 0,
+      "source": "marie curie",
+      "target": "polonium",
+      "key": 0
+    },
+    {
+      "relation": "DISCOVERED",
+      "source_chunk": 0,
+      "source": "marie curie",
+      "target": "radium",
+      "key": 0
+    },
+    {
+      "relation": "WON_AWARD",
+      "source_chunk": 0,
+      "source": "marie curie",
+      "target": "nobel prize in physics",
+      "key": 0
+    },
+    {
+      "relation": "WON_AWARD",
+      "source_chunk": 0,
+      "source": "marie curie",
+      "target": "nobel prize in chemistry",
+      "key": 0
+    },
+    {
+      "relation": "FOUNDED",
+      "source_chunk": 0,
+      "source": "marie curie",
+      "target": "radium institute",
+      "key": 0
+    },
+    {
+      "relation": "DISCOVERED",
+      "source_chunk": 0,
+      "source": "pierre curie",
+      "target": "polonium",
+      "key": 0
+    },
+    {
+      "relation": "DISCOVERED",
+      "source_chunk": 0,
+      "source": "pierre curie",
+      "target": "radium",
+      "key": 0
+    },
+    {
+      "relation": "WON_AWARD",
+      "source_chunk": 0,
+      "source": "pierre curie",
+      "target": "nobel prize in physics",
+      "key": 0
+    },
+    {
+      "relation": "NAMED_AFTER",
+      "source_chunk": 0,
+      "source": "polonium",
+      "target": "poland",
+      "key": 0
+    },
+    {
+      "relation": "AWARDED_ON",
+      "source_chunk": 0,
+      "source": "nobel prize in physics",
+      "target": "1903",
+      "key": 0
+    },
+    {
+      "relation": "WON_AWARD",
+      "source_chunk": 0,
+      "source": "henri becquerel",
+      "target": "nobel prize in physics",
+      "key": 0
+    },
+    {
+      "relation": "DISCOVERED",
+      "source_chunk": 0,
+      "source": "henri becquerel",
+      "target": "radioactivity",
+      "key": 0
+    },
+    {
+      "relation": "DISCOVERED_ON",
+      "source_chunk": 0,
+      "source": "radioactivity",
+      "target": "1896",
+      "key": 0
+    },
+    {
+      "relation": "AWARDED_ON",
+      "source_chunk": 0,
+      "source": "nobel prize in chemistry",
+      "target": "1911",
+      "key": 0
+    },
+    {
+      "relation": "AWARDED_ON",
+      "source_chunk": 0,
+      "source": "nobel prize in chemistry",
+      "target": "1935",
+      "key": 0
+    },
+    {
+      "relation": "CHILD_OF",
+      "source_chunk": 0,
+      "source": "irène joliot-curie",
+      "target": "marie curie",
+      "key": 0
+    },
+    {
+      "relation": "CHILD_OF",
+      "source_chunk": 0,
+      "source": "irène joliot-curie",
+      "target": "pierre curie",
+      "key": 0
+    },
+    {
+      "relation": "MARRIED_TO",
+      "source_chunk": 0,
+      "source": "irène joliot-curie",
+      "target": "frédéric joliot",
+      "key": 0
+    },
+    {
+      "relation": "DISCOVERED",
+      "source_chunk": 0,
+      "source": "irène joliot-curie",
+      "target": "artificial radioactivity",
+      "key": 0
+    },
+    {
+      "relation": "WON_AWARD",
+      "source_chunk": 0,
+      "source": "irène joliot-curie",
+      "target": "nobel prize in chemistry",
+      "key": 0
+    },
+    {
+      "relation": "DIRECTOR_OF",
+      "source_chunk": 0,
+      "source": "irène joliot-curie",
+      "target": "radium institute",
+      "key": 0
+    },
+    {
+      "relation": "DISCOVERED",
+      "source_chunk": 0,
+      "source": "frédéric joliot",
+      "target": "artificial radioactivity",
+      "key": 0
+    },
+    {
+      "relation": "WON_AWARD",
+      "source_chunk": 0,
+      "source": "frédéric joliot",
+      "target": "nobel prize in chemistry",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "radium institute",
+      "target": "paris",
+      "key": 0
+    }
+  ]
+}
