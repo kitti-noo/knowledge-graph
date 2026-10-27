@@ -1,6 +1,6 @@
 # 4. ข้อจำกัดและสิ่งที่ควรทำต่อ
 
-repo นี้ตั้งใจทำให้ง่ายที่สุด ปัญหาด้านล่างทั้งหมดเห็นได้จริงในกราฟตัวอย่าง ([data/graph.json](../data/graph.json)) ลองเปิดดูประกอบ
+repo นี้ตั้งใจทำให้ง่ายที่สุด ปัญหาด้านล่างทั้งหมดเห็นได้จริงในกราฟตัวอย่าง ([examples/thai-tourism/graph.json](../examples/thai-tourism/graph.json)) ลองเปิดดูประกอบ
 
 ## 1. Entity resolution — สิ่งเดียวกัน แต่กลายเป็นหลาย node
 
@@ -81,4 +81,4 @@ WORLD_HERITAGE_OF, INTANGIBLE_HERITAGE_OF, FAMOUS_FOR
 2. ให้ LLM สรุปแต่ละกลุ่ม
 3. ตอบคำถามจากบทสรุปของกลุ่มเหล่านั้น
 
-กลับไป: [สารบัญ](README.md)
+ถัดไป: [เริ่มทำ KG ของตัวเอง →](05-start-your-own.md)

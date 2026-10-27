@@ -1,0 +1,42 @@
+subject,relation,object,note,source
+RMS,PRODUCES,Product Master,,interface-list.xlsx
+RMS,PRODUCES,Price,,interface-list.xlsx
+RMS,PRODUCES,Promotion,,interface-list.xlsx
+RMS,SENDS_TO,POS,ราคา product master และโปรโมชัน,interface-list.xlsx
+RMS,SENDS_TO,E-commerce,ราคาและ product master,interface-list.xlsx
+RMS,SENDS_TO,ERP,product master สำหรับบัญชี,interface-list.xlsx
+Price,VIA,Price batch 02:00,ทุกคืน 02:00,คุยกับทีม Merch IT
+POS,CONSUMES,Price,,interface-list.xlsx
+POS,CONSUMES,Promotion,,interface-list.xlsx
+POS,CONSUMES,Product Master,,interface-list.xlsx
+POS,PRODUCES,Sales Transaction,,interface-list.xlsx
+Sales Transaction,VIA,Kafka sales-events,real-time,architecture-diagram.png
+POS,SENDS_TO,ERP,ยอดขายปิดวัน,interface-list.xlsx
+POS,DEPENDS_ON,Coupon Engine,ชำระด้วยคูปองไม่ได้ถ้าล่ม แต่ขายปกติได้,INC-1234
+POS,CONSUMES,Coupon,,Confluence: Coupon flow
+Coupon Engine,PRODUCES,Coupon,,Confluence: Coupon flow
+Coupon,VIA,Coupon API,,Confluence: Coupon flow
+Coupon Engine,DEPENDS_ON,CRM,เช็กสิทธิ์สมาชิกก่อน validate,INC-1234
+CRM,PRODUCES,Member,,interface-list.xlsx
+Member,VIA,Member API,,interface-list.xlsx
+Mobile App,DEPENDS_ON,CRM,login และแต้มสะสม,คุยกับทีม Digital
+Mobile App,CONSUMES,Coupon,แสดงคูปองในแอป,คุยกับทีม Digital
+E-commerce,CONSUMES,Price,,interface-list.xlsx
+E-commerce,DEPENDS_ON,Coupon Engine,ใช้คูปองตอน checkout,คุยกับทีม Digital
+E-commerce,CONSUMES,Coupon,ใช้คูปองตอน checkout,คุยกับทีม Digital
+E-commerce,SENDS_TO,WMS,ออเดอร์ออนไลน์,interface-list.xlsx
+WMS,PRODUCES,Stock,,interface-list.xlsx
+Stock,VIA,Stock sync,ทุก 15 นาที,interface-list.xlsx
+E-commerce,CONSUMES,Stock,แสดงสินค้าคงเหลือ,interface-list.xlsx
+E-commerce,SENDS_TO,ERP,ยอดขายออนไลน์,interface-list.xlsx
+POS,OWNED_BY,ทีม Store IT,,
+RMS,OWNED_BY,ทีม Merch IT,,
+Coupon Engine,OWNED_BY,ทีม CRM,,
+CRM,OWNED_BY,ทีม CRM,,
+ERP,OWNED_BY,ทีม Finance IT,,
+E-commerce,OWNED_BY,ทีม Digital,,
+Mobile App,OWNED_BY,ทีม Digital,,
+WMS,OWNED_BY,ทีม Supply Chain IT,,
+POS,USED_IN,หน้าร้าน,,
+E-commerce,USED_IN,เว็บไซต์,,
+Mobile App,USED_IN,แอปมือถือ,,

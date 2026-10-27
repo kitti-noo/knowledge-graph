@@ -4,6 +4,19 @@ Playground สำหรับลองทำ Knowledge Graph + GraphRAG ด้�
 
 เริ่มจากศูนย์? อ่าน [docs/ — KG 101](docs/README.md)
 
+## โครงสร้าง
+
+```
+kg/, main.py              engine ใช้ร่วมกันทุกโดเมน
+examples/
+  thai-tourism/           ตัวอย่างสำหรับเรียน: เอกสารข้อความ → LLM → กราฟ (docs บทที่ 1–4)
+  retail-demo/            ตัวอย่างระบบค้าปลีก (ข้อมูลสมมติ): ontology + CSV + เอกสาร (docs บทที่ 5–6)
+domains/                  โดเมนของคุณเองตอนลองในเครื่อง (gitignore ไว้ ไม่ขึ้น GitHub)
+docs/                     KG 101 ภาษาไทย
+```
+
+ทุกคำสั่งรับ `--domain <โฟลเดอร์>` (ค่าเริ่มต้นคือ `examples/thai-tourism`) กราฟของแต่ละโดเมนจะเก็บไว้ที่ `<โฟลเดอร์>/graph.json`
+
 ## RAG vs GraphRAG
 
 | | Vector RAG | GraphRAG (โปรเจกต์นี้) |
@@ -16,7 +29,7 @@ Playground สำหรับลองทำ Knowledge Graph + GraphRAG ด้�
 ## Pipeline
 
 ```
-text ──chunk──▶ LLM (extract.py) ──triples──▶ graph.py (NetworkX) ──▶ data/graph.json
+text ──chunk──▶ LLM (extract.py) ──triples──▶ graph.py (NetworkX) ──▶ graph.json
                                                      │
 question ──▶ find seed entities ──▶ k-hop subgraph ──▶ facts ──▶ LLM answer (query.py)
 ```
@@ -25,13 +38,25 @@ question ──▶ find seed entities ──▶ k-hop subgraph ──▶ facts �
 
 ```bash
 uv sync
-uv run main.py ingest data/sample.txt
+uv run main.py ingest examples/thai-tourism/sample.txt --reset
 uv run main.py stats
-uv run main.py viz                       # เปิด data/graph.html ดูกราฟ
+uv run main.py viz                       # เปิด examples/thai-tourism/graph.html ดูกราฟ
 uv run main.py ask "ประเพณีที่ตรงกับยี่เป็งมีต้นกำเนิดที่จังหวัดใด" -v
+uv run main.py eval --hops 4            # ถามทุกข้อใน examples/thai-tourism/questions.md
 ```
 
 เปลี่ยน model: `KG_MODEL=qwen3:8b uv run main.py ...`
+
+### โดเมนของตัวเอง (ตัวอย่าง: ระบบค้าปลีก)
+
+```bash
+uv run main.py ingest-csv --domain examples/retail-demo --reset          # ตาราง → กราฟ (ไม่ใช้ LLM)
+uv run main.py ingest     --domain examples/retail-demo examples/retail-demo/docs/*.md
+uv run main.py impact     --domain examples/retail-demo "ระบบสมาชิก"       # ถ้า CRM ล่ม กระทบใคร
+uv run main.py eval       --domain examples/retail-demo                  # วัดผลกับ questions.md
+```
+
+ดูทีละขั้นใน [docs/06-walkthrough.md](docs/06-walkthrough.md)
 
 ## ลองต่อ (เรียงจากง่าย → ยาก)
 

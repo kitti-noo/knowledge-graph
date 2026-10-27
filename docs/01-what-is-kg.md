@@ -67,6 +67,6 @@ uv run main.py stats
     ...
 ```
 
-ตัวเลขด้านหน้าคือ **degree** หรือจำนวน edge ที่เชื่อมกับ node นั้น node ที่มี degree สูงคือ "ศูนย์กลาง" ของเรื่อง ในตัวอย่างนี้ `ยูเนสโก` เป็นศูนย์กลาง เพราะเชื่อมกับมรดกโลกและมรดกทางวัฒนธรรมทุกแห่ง ส่วน `uv run main.py viz` จะสร้าง [data/graph.html](../data/graph.html) ให้ลากดูกราฟได้
+ตัวเลขด้านหน้าคือ **degree** หรือจำนวน edge ที่เชื่อมกับ node นั้น node ที่มี degree สูงคือ "ศูนย์กลาง" ของเรื่อง ในตัวอย่างนี้ `ยูเนสโก` เป็นศูนย์กลาง เพราะเชื่อมกับมรดกโลกและมรดกทางวัฒนธรรมทุกแห่ง ส่วน `uv run main.py viz` จะสร้าง [examples/thai-tourism/graph.html](../examples/thai-tourism/graph.html) ให้ลากดูกราฟได้
 
 ถัดไป: [Pipeline ใน repo นี้ →](02-pipeline.md)

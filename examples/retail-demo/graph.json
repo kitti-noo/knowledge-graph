@@ -1,0 +1,454 @@
+{
+  "directed": true,
+  "multigraph": true,
+  "graph": {},
+  "nodes": [
+    {
+      "label": "RMS",
+      "type": "System",
+      "id": "rms"
+    },
+    {
+      "label": "Product Master",
+      "type": "DataObject",
+      "id": "product master"
+    },
+    {
+      "label": "Price",
+      "type": "DataObject",
+      "id": "price"
+    },
+    {
+      "label": "Promotion",
+      "type": "DataObject",
+      "id": "promotion"
+    },
+    {
+      "label": "POS",
+      "type": "System",
+      "id": "pos"
+    },
+    {
+      "label": "E-commerce",
+      "type": "System",
+      "id": "e-commerce"
+    },
+    {
+      "label": "ERP",
+      "type": "System",
+      "id": "erp"
+    },
+    {
+      "label": "Price batch 02:00",
+      "type": "Interface",
+      "id": "price batch 02:00"
+    },
+    {
+      "label": "Sales Transaction",
+      "type": "DataObject",
+      "id": "sales transaction"
+    },
+    {
+      "label": "Kafka sales-events",
+      "type": "Interface",
+      "id": "kafka sales-events"
+    },
+    {
+      "label": "Coupon Engine",
+      "type": "System",
+      "id": "coupon engine"
+    },
+    {
+      "label": "Coupon",
+      "type": "DataObject",
+      "id": "coupon"
+    },
+    {
+      "label": "Coupon API",
+      "type": "Interface",
+      "id": "coupon api"
+    },
+    {
+      "label": "CRM",
+      "type": "System",
+      "id": "crm"
+    },
+    {
+      "label": "Member",
+      "type": "DataObject",
+      "id": "member"
+    },
+    {
+      "label": "Member API",
+      "type": "Interface",
+      "id": "member api"
+    },
+    {
+      "label": "Mobile App",
+      "type": "System",
+      "id": "mobile app"
+    },
+    {
+      "label": "WMS",
+      "type": "System",
+      "id": "wms"
+    },
+    {
+      "label": "Stock",
+      "type": "DataObject",
+      "id": "stock"
+    },
+    {
+      "label": "Stock sync",
+      "type": "Interface",
+      "id": "stock sync"
+    },
+    {
+      "label": "ทีม Store IT",
+      "type": "Team",
+      "id": "ทีม store it"
+    },
+    {
+      "label": "ทีม Merch IT",
+      "type": "Team",
+      "id": "ทีม merch it"
+    },
+    {
+      "label": "ทีม CRM",
+      "type": "Team",
+      "id": "ทีม crm"
+    },
+    {
+      "label": "ทีม Finance IT",
+      "type": "Team",
+      "id": "ทีม finance it"
+    },
+    {
+      "label": "ทีม Digital",
+      "type": "Team",
+      "id": "ทีม digital"
+    },
+    {
+      "label": "ทีม Supply Chain IT",
+      "type": "Team",
+      "id": "ทีม supply chain it"
+    },
+    {
+      "label": "หน้าร้าน",
+      "type": "Channel",
+      "id": "หน้าร้าน"
+    },
+    {
+      "label": "เว็บไซต์",
+      "type": "Channel",
+      "id": "เว็บไซต์"
+    },
+    {
+      "label": "แอปมือถือ",
+      "type": "Channel",
+      "id": "แอปมือถือ"
+    },
+    {
+      "label": "Chatbot",
+      "type": "System",
+      "id": "chatbot"
+    },
+    {
+      "label": "LINE OA",
+      "type": "Channel",
+      "id": "line oa"
+    }
+  ],
+  "edges": [
+    {
+      "relation": "PRODUCES",
+      "source": "rms",
+      "target": "product master",
+      "key": 0
+    },
+    {
+      "relation": "PRODUCES",
+      "source": "rms",
+      "target": "price",
+      "key": 0
+    },
+    {
+      "relation": "PRODUCES",
+      "source": "rms",
+      "target": "promotion",
+      "key": 0
+    },
+    {
+      "relation": "SENDS_TO",
+      "note": "ราคา product master และโปรโมชัน",
+      "source": "rms",
+      "target": "pos",
+      "key": 0
+    },
+    {
+      "relation": "SENDS_TO",
+      "note": "ราคาและ product master",
+      "source": "rms",
+      "target": "e-commerce",
+      "key": 0
+    },
+    {
+      "relation": "SENDS_TO",
+      "note": "product master สำหรับบัญชี",
+      "source": "rms",
+      "target": "erp",
+      "key": 0
+    },
+    {
+      "relation": "OWNED_BY",
+      "source": "rms",
+      "target": "ทีม merch it",
+      "key": 0
+    },
+    {
+      "relation": "VIA",
+      "note": "ทุกคืน 02:00",
+      "source": "price",
+      "target": "price batch 02:00",
+      "key": 0
+    },
+    {
+      "relation": "CONSUMES",
+      "source": "pos",
+      "target": "price",
+      "key": 0
+    },
+    {
+      "relation": "CONSUMES",
+      "source": "pos",
+      "target": "promotion",
+      "key": 0
+    },
+    {
+      "relation": "CONSUMES",
+      "source": "pos",
+      "target": "product master",
+      "key": 0
+    },
+    {
+      "relation": "PRODUCES",
+      "source": "pos",
+      "target": "sales transaction",
+      "key": 0
+    },
+    {
+      "relation": "SENDS_TO",
+      "note": "ยอดขายปิดวัน",
+      "source": "pos",
+      "target": "erp",
+      "key": 0
+    },
+    {
+      "relation": "DEPENDS_ON",
+      "note": "ชำระด้วยคูปองไม่ได้ถ้าล่ม แต่ขายปกติได้",
+      "source": "pos",
+      "target": "coupon engine",
+      "key": 0
+    },
+    {
+      "relation": "CONSUMES",
+      "source": "pos",
+      "target": "coupon",
+      "key": 0
+    },
+    {
+      "relation": "OWNED_BY",
+      "source": "pos",
+      "target": "ทีม store it",
+      "key": 0
+    },
+    {
+      "relation": "USED_IN",
+      "source": "pos",
+      "target": "หน้าร้าน",
+      "key": 0
+    },
+    {
+      "relation": "CONSUMES",
+      "source": "e-commerce",
+      "target": "price",
+      "key": 0
+    },
+    {
+      "relation": "DEPENDS_ON",
+      "note": "ใช้คูปองตอน checkout",
+      "source": "e-commerce",
+      "target": "coupon engine",
+      "key": 0
+    },
+    {
+      "relation": "CONSUMES",
+      "note": "ใช้คูปองตอน checkout",
+      "source": "e-commerce",
+      "target": "coupon",
+      "key": 0
+    },
+    {
+      "relation": "SENDS_TO",
+      "note": "ออเดอร์ออนไลน์",
+      "source": "e-commerce",
+      "target": "wms",
+      "key": 0
+    },
+    {
+      "relation": "CONSUMES",
+      "note": "แสดงสินค้าคงเหลือ",
+      "source": "e-commerce",
+      "target": "stock",
+      "key": 0
+    },
+    {
+      "relation": "SENDS_TO",
+      "note": "ยอดขายออนไลน์",
+      "source": "e-commerce",
+      "target": "erp",
+      "key": 0
+    },
+    {
+      "relation": "OWNED_BY",
+      "source": "e-commerce",
+      "target": "ทีม digital",
+      "key": 0
+    },
+    {
+      "relation": "USED_IN",
+      "source": "e-commerce",
+      "target": "เว็บไซต์",
+      "key": 0
+    },
+    {
+      "relation": "OWNED_BY",
+      "source": "erp",
+      "target": "ทีม finance it",
+      "key": 0
+    },
+    {
+      "relation": "VIA",
+      "note": "real-time",
+      "source": "sales transaction",
+      "target": "kafka sales-events",
+      "key": 0
+    },
+    {
+      "relation": "PRODUCES",
+      "source": "coupon engine",
+      "target": "coupon",
+      "key": 0
+    },
+    {
+      "relation": "DEPENDS_ON",
+      "note": "เช็กสิทธิ์สมาชิกก่อน validate",
+      "source": "coupon engine",
+      "target": "crm",
+      "key": 0
+    },
+    {
+      "relation": "OWNED_BY",
+      "source": "coupon engine",
+      "target": "ทีม crm",
+      "key": 0
+    },
+    {
+      "relation": "VIA",
+      "source": "coupon",
+      "target": "coupon api",
+      "key": 0
+    },
+    {
+      "relation": "PRODUCES",
+      "source": "crm",
+      "target": "member",
+      "key": 0
+    },
+    {
+      "relation": "OWNED_BY",
+      "source": "crm",
+      "target": "ทีม crm",
+      "key": 0
+    },
+    {
+      "relation": "VIA",
+      "source": "member",
+      "target": "member api",
+      "key": 0
+    },
+    {
+      "relation": "DEPENDS_ON",
+      "note": "login และแต้มสะสม",
+      "source": "mobile app",
+      "target": "crm",
+      "key": 0
+    },
+    {
+      "relation": "CONSUMES",
+      "note": "แสดงคูปองในแอป",
+      "source": "mobile app",
+      "target": "coupon",
+      "key": 0
+    },
+    {
+      "relation": "OWNED_BY",
+      "source": "mobile app",
+      "target": "ทีม digital",
+      "key": 0
+    },
+    {
+      "relation": "USED_IN",
+      "source": "mobile app",
+      "target": "แอปมือถือ",
+      "key": 0
+    },
+    {
+      "relation": "PRODUCES",
+      "source": "wms",
+      "target": "stock",
+      "key": 0
+    },
+    {
+      "relation": "OWNED_BY",
+      "source": "wms",
+      "target": "ทีม supply chain it",
+      "key": 0
+    },
+    {
+      "relation": "VIA",
+      "note": "ทุก 15 นาที",
+      "source": "stock",
+      "target": "stock sync",
+      "key": 0
+    },
+    {
+      "relation": "SENDS_TO",
+      "source_chunk": 0,
+      "source": "chatbot",
+      "target": "coupon engine",
+      "key": 0
+    },
+    {
+      "relation": "DEPENDS_ON",
+      "source_chunk": 0,
+      "source": "chatbot",
+      "target": "coupon engine",
+      "key": 1
+    },
+    {
+      "relation": "USED_IN",
+      "source_chunk": 0,
+      "source": "chatbot",
+      "target": "line oa",
+      "key": 0
+    },
+    {
+      "relation": "OWNED_BY",
+      "source_chunk": 0,
+      "source": "chatbot",
+      "target": "ทีม digital",
+      "key": 0
+    }
+  ]
+}

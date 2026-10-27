@@ -2,7 +2,7 @@
 
 ```
                  ┌────────── ingest ──────────┐
-data/sample.txt ─▶ chunk ─▶ LLM extract ─▶ triples ─▶ build graph ─▶ data/graph.json
+sample.txt ─▶ chunk ─▶ LLM extract ─▶ triples ─▶ build graph ─▶ graph.json
                   extract.py                          graph.py
 
                  ┌──────────────────── ask ─────────────────────┐
@@ -72,7 +72,7 @@ def key(name: str) -> str:
 
 `build()` ยังกัน edge ซ้ำด้วย ถ้ามี relation เดียวกันระหว่าง node คู่เดิมอยู่แล้ว จะไม่เพิ่มอีก จึงรัน `ingest` ซ้ำหลายไฟล์ได้โดยไม่เกิด edge ซ้ำ
 
-กราฟถูกบันทึกเป็น JSON (`node_link_data`) ที่ [data/graph.json](../data/graph.json) ซึ่งเปิดอ่านได้ด้วยตา
+กราฟถูกบันทึกเป็น JSON (`node_link_data`) ที่ [examples/thai-tourism/graph.json](../examples/thai-tourism/graph.json) ซึ่งเปิดอ่านได้ด้วยตา
 
 ## ขั้นที่ 3 — Ask: คำถาม → คำตอบ
 

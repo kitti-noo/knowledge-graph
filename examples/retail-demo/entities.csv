@@ -1,0 +1,31 @@
+name,type,aliases,owner,description
+POS,System,ระบบ POS|เครื่องคิดเงิน|ระบบขายหน้าร้าน,ทีม Store IT,ระบบขายและชำระเงินหน้าร้าน
+RMS,System,Retail Merchandising System|ระบบจัดการสินค้า|ระบบมาสเตอร์สินค้า,ทีม Merch IT,master สินค้า ราคา และโปรโมชัน
+Coupon Engine,System,ระบบคูปอง|Promo X,ทีม CRM,สร้างและ validate คูปอง
+CRM,System,ระบบสมาชิก|ระบบ loyalty,ทีม CRM,ข้อมูลสมาชิกและแต้มสะสม
+ERP,System,ระบบบัญชี,ทีม Finance IT,บัญชีและการเงิน
+E-commerce,System,เว็บขายของ|ระบบเว็บ,ทีม Digital,เว็บไซต์ขายออนไลน์
+Mobile App,System,แอป|แอปสมาชิก,ทีม Digital,แอปสำหรับสมาชิก
+WMS,System,ระบบคลังสินค้า,ทีม Supply Chain IT,บริหารคลังและสต็อก
+Product Master,DataObject,ข้อมูลสินค้า|master สินค้า,,รายการสินค้าและ SKU
+Price,DataObject,ราคา|ราคาขาย,,ราคาขายปลีกต่อ SKU
+Promotion,DataObject,โปรโมชัน|โปร,,โปรโมชันที่ตั้งจาก RMS
+Coupon,DataObject,คูปอง,,คูปองส่วนลด
+Member,DataObject,ข้อมูลสมาชิก,,ข้อมูลสมาชิกและสิทธิ์
+Sales Transaction,DataObject,ยอดขาย|บิลขาย,,รายการขายแต่ละบิล
+Stock,DataObject,สต็อก|สินค้าคงคลัง,,จำนวนสินค้าคงเหลือ
+Price batch 02:00,Interface,batch ราคา,,ไฟล์ CSV ผ่าน SFTP ทุกคืน
+Coupon API,Interface,,,REST API สำหรับ validate และ redeem คูปอง
+Member API,Interface,,,REST API ข้อมูลสมาชิก
+Kafka sales-events,Interface,sales-events,,Kafka topic ยอดขาย real-time
+Stock sync,Interface,,,sync สต็อกทุก 15 นาที
+ทีม Store IT,Team,Store IT,,
+ทีม Merch IT,Team,Merch IT,,
+ทีม CRM,Team,,,
+ทีม Finance IT,Team,Finance IT,,
+ทีม Digital,Team,,,
+ทีม Supply Chain IT,Team,Supply Chain IT,,
+หน้าร้าน,Channel,สาขา|store,,
+เว็บไซต์,Channel,เว็บ|online,,
+แอปมือถือ,Channel,,,
+LINE OA,Channel,LINE|ไลน์,,LINE Official Account
