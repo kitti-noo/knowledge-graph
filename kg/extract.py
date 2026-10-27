@@ -10,6 +10,7 @@ Return JSON: {"triples": [{"subject": str, "subject_type": str,
 "relation": str, "object": str, "object_type": str}]}
 Rules:
 - Entities are canonical names (e.g. "Marie Curie", not "she" / "Curie").
+- Keep entity names in the language of the text (Thai stays Thai). Use the fullest name given as canonical.
 - Types are short labels: Person, Organization, Place, Concept, Award, Event, Work, Date.
 - Relations are UPPER_SNAKE_CASE verbs: WORKED_AT, MARRIED_TO, DISCOVERED, BORN_IN.
 - Only facts stated in the text. No guesses."""

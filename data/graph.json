@@ -4,318 +4,740 @@
   "graph": {},
   "nodes": [
     {
-      "label": "Marie Curie",
-      "type": "Person",
-      "id": "marie curie"
-    },
-    {
-      "label": "Warsaw",
+      "label": "จังหวัดเชียงใหม่",
       "type": "Place",
-      "id": "warsaw"
+      "id": "จังหวัดเชียงใหม่"
     },
     {
-      "label": "1867",
-      "type": "Date",
-      "id": "1867"
+      "label": "ภาคเหนือ",
+      "type": "Place",
+      "id": "ภาคเหนือ"
     },
     {
-      "label": "University of Paris",
+      "label": "ประเทศไทย",
+      "type": "Place",
+      "id": "ประเทศไทย"
+    },
+    {
+      "label": "ดอยอินทนนท์",
+      "type": "Place",
+      "id": "ดอยอินทนนท์"
+    },
+    {
+      "label": "อุทยานแห่งชาติดอยอินทนนท์",
+      "type": "Place",
+      "id": "อุทยานแห่งชาติดอยอินทนนท์"
+    },
+    {
+      "label": "ยอดเขาที่สูงที่สุดในประเทศไทย",
+      "type": "Concept",
+      "id": "ยอดเขาที่สูงที่สุดในประเทศไทย"
+    },
+    {
+      "label": "วัดพระธาตุดอยสุเทพ",
+      "type": "Place",
+      "id": "วัดพระธาตุดอยสุเทพ"
+    },
+    {
+      "label": "ข้าวซอย",
+      "type": "Concept",
+      "id": "ข้าวซอย"
+    },
+    {
+      "label": "อาหารพื้นเมืองภาคเหนือ",
+      "type": "Concept",
+      "id": "อาหารพื้นเมืองภาคเหนือ"
+    },
+    {
+      "label": "ประเพณียี่เป็ง",
+      "type": "Event",
+      "id": "ประเพณียี่เป็ง"
+    },
+    {
+      "label": "อุทยานประวัติศาสตร์สุโขทัย",
+      "type": "Place",
+      "id": "อุทยานประวัติศาสตร์สุโขทัย"
+    },
+    {
+      "label": "จังหวัดสุโขทัย",
+      "type": "Place",
+      "id": "จังหวัดสุโขทัย"
+    },
+    {
+      "label": "ยูเนสโก",
       "type": "Organization",
-      "id": "university of paris"
+      "id": "ยูเนสโก"
     },
     {
-      "label": "Pierre Curie",
-      "type": "Person",
-      "id": "pierre curie"
-    },
-    {
-      "label": "1895",
+      "label": "พ.ศ. 2534",
       "type": "Date",
-      "id": "1895"
+      "id": "พ.ศ. 2534"
     },
     {
-      "label": "polonium",
-      "type": "Concept",
-      "id": "polonium"
-    },
-    {
-      "label": "radium",
-      "type": "Concept",
-      "id": "radium"
-    },
-    {
-      "label": "Poland",
+      "label": "นครประวัติศาสตร์พระนครศรีอยุธยา",
       "type": "Place",
-      "id": "poland"
+      "id": "นครประวัติศาสตร์พระนครศรีอยุธยา"
     },
     {
-      "label": "Nobel Prize in Physics",
-      "type": "Award",
-      "id": "nobel prize in physics"
-    },
-    {
-      "label": "Henri Becquerel",
-      "type": "Person",
-      "id": "henri becquerel"
-    },
-    {
-      "label": "1903",
-      "type": "Date",
-      "id": "1903"
-    },
-    {
-      "label": "radioactivity",
-      "type": "Concept",
-      "id": "radioactivity"
-    },
-    {
-      "label": "1896",
-      "type": "Date",
-      "id": "1896"
-    },
-    {
-      "label": "Nobel Prize in Chemistry",
-      "type": "Award",
-      "id": "nobel prize in chemistry"
-    },
-    {
-      "label": "1911",
-      "type": "Date",
-      "id": "1911"
-    },
-    {
-      "label": "Irène Joliot-Curie",
-      "type": "Person",
-      "id": "irène joliot-curie"
-    },
-    {
-      "label": "Frédéric Joliot",
-      "type": "Person",
-      "id": "frédéric joliot"
-    },
-    {
-      "label": "artificial radioactivity",
-      "type": "Concept",
-      "id": "artificial radioactivity"
-    },
-    {
-      "label": "1935",
-      "type": "Date",
-      "id": "1935"
-    },
-    {
-      "label": "Radium Institute",
-      "type": "Organization",
-      "id": "radium institute"
-    },
-    {
-      "label": "Paris",
+      "label": "จังหวัดพระนครศรีอยุธยา",
       "type": "Place",
-      "id": "paris"
+      "id": "จังหวัดพระนครศรีอยุธยา"
+    },
+    {
+      "label": "ประเพณีลอยกระทง",
+      "type": "Event",
+      "id": "ประเพณีลอยกระทง"
+    },
+    {
+      "label": "งานลอยกระทงเผาเทียนเล่นไฟ",
+      "type": "Event",
+      "id": "งานลอยกระทงเผาเทียนเล่นไฟ"
+    },
+    {
+      "label": "ภาคตะวันออกเฉียงเหนือ",
+      "type": "Place",
+      "id": "ภาคตะวันออกเฉียงเหนือ"
+    },
+    {
+      "label": "ภาคอีสาน",
+      "type": "Place",
+      "id": "ภาคอีสาน"
+    },
+    {
+      "label": "แหล่งโบราณคดีบ้านเชียง",
+      "type": "Place",
+      "id": "แหล่งโบราณคดีบ้านเชียง"
+    },
+    {
+      "label": "จังหวัดอุดรธานี",
+      "type": "Place",
+      "id": "จังหวัดอุดรธานี"
+    },
+    {
+      "label": "พ.ศ. 2535",
+      "type": "Date",
+      "id": "พ.ศ. 2535"
+    },
+    {
+      "label": "ปราสาทหินพนมรุ้ง",
+      "type": "Place",
+      "id": "ปราสาทหินพนมรุ้ง"
+    },
+    {
+      "label": "จังหวัดบุรีรัมย์",
+      "type": "Place",
+      "id": "จังหวัดบุรีรัมย์"
+    },
+    {
+      "label": "จังหวัดเลย",
+      "type": "Place",
+      "id": "จังหวัดเลย"
+    },
+    {
+      "label": "จังหวัดยโสธร",
+      "type": "Place",
+      "id": "จังหวัดยโสธร"
+    },
+    {
+      "label": "ประเพณีผีตาโขน",
+      "type": "Event",
+      "id": "ประเพณีผีตาโขน"
+    },
+    {
+      "label": "อำเภอด่านซ้าย",
+      "type": "Place",
+      "id": "อำเภอด่านซ้าย"
+    },
+    {
+      "label": "ประเพณีบุญบั้งไฟ",
+      "type": "Event",
+      "id": "ประเพณีบุญบั้งไฟ"
+    },
+    {
+      "label": "จังหวัดภูเก็ต",
+      "type": "Place",
+      "id": "จังหวัดภูเก็ต"
+    },
+    {
+      "label": "ภาคใต้",
+      "type": "Place",
+      "id": "ภาคใต้"
+    },
+    {
+      "label": "เกาะที่ใหญ่ที่สุดของประเทศไทย",
+      "type": "Concept",
+      "id": "เกาะที่ใหญ่ที่สุดของประเทศไทย"
+    },
+    {
+      "label": "จังหวัดกระบี่",
+      "type": "Place",
+      "id": "จังหวัดกระบี่"
+    },
+    {
+      "label": "หมู่เกาะพีพี",
+      "type": "Place",
+      "id": "หมู่เกาะพีพี"
+    },
+    {
+      "label": "อุทยานแห่งชาติหาดนพรัตน์ธารา-หมู่เกาะพีพี",
+      "type": "Place",
+      "id": "อุทยานแห่งชาติหาดนพรัตน์ธารา-หมู่เกาะพีพี"
+    },
+    {
+      "label": "เกาะพีพีเล",
+      "type": "Place",
+      "id": "เกาะพีพีเล"
+    },
+    {
+      "label": "อ่าวมาหยา",
+      "type": "Place",
+      "id": "อ่าวมาหยา"
+    },
+    {
+      "label": "The Beach",
+      "type": "Work",
+      "id": "the beach"
+    },
+    {
+      "label": "จังหวัดสุราษฎร์ธานี",
+      "type": "Place",
+      "id": "จังหวัดสุราษฎร์ธานี"
+    },
+    {
+      "label": "เกาะสมุย",
+      "type": "Place",
+      "id": "เกาะสมุย"
+    },
+    {
+      "label": "เกาะพะงัน",
+      "type": "Place",
+      "id": "เกาะพะงัน"
+    },
+    {
+      "label": "ฟูลมูนปาร์ตี้",
+      "type": "Event",
+      "id": "ฟูลมูนปาร์ตี้"
+    },
+    {
+      "label": "จังหวัดกาญจนบุรี",
+      "type": "Place",
+      "id": "จังหวัดกาญจนบุรี"
+    },
+    {
+      "label": "ภาคตะวันตก",
+      "type": "Place",
+      "id": "ภาคตะวันตก"
+    },
+    {
+      "label": "สะพานข้ามแม่น้ำแคว",
+      "type": "Place",
+      "id": "สะพานข้ามแม่น้ำแคว"
+    },
+    {
+      "label": "ทางรถไฟสายมรณะ",
+      "type": "Place",
+      "id": "ทางรถไฟสายมรณะ"
+    },
+    {
+      "label": "สงครามโลกครั้งที่สอง",
+      "type": "Event",
+      "id": "สงครามโลกครั้งที่สอง"
+    },
+    {
+      "label": "เขตรักษาพันธุ์สัตว์ป่าทุ่งใหญ่นเรศวร-ห้วยขาแข้ง",
+      "type": "Place",
+      "id": "เขตรักษาพันธุ์สัตว์ป่าทุ่งใหญ่นเรศวร-ห้วยขาแข้ง"
+    },
+    {
+      "label": "กลุ่มป่าดงพญาเย็น-เขาใหญ่",
+      "type": "Place",
+      "id": "กลุ่มป่าดงพญาเย็น-เขาใหญ่"
+    },
+    {
+      "label": "พ.ศ. 2548",
+      "type": "Date",
+      "id": "พ.ศ. 2548"
+    },
+    {
+      "label": "โขน",
+      "type": "Concept",
+      "id": "โขน"
+    },
+    {
+      "label": "พ.ศ. 2561",
+      "type": "Date",
+      "id": "พ.ศ. 2561"
+    },
+    {
+      "label": "นวดไทย",
+      "type": "Concept",
+      "id": "นวดไทย"
+    },
+    {
+      "label": "พ.ศ. 2562",
+      "type": "Date",
+      "id": "พ.ศ. 2562"
+    },
+    {
+      "label": "ประเพณีสงกรานต์",
+      "type": "Concept",
+      "id": "ประเพณีสงกรานต์"
+    },
+    {
+      "label": "พ.ศ. 2566",
+      "type": "Date",
+      "id": "พ.ศ. 2566"
+    },
+    {
+      "label": "ต้มยำกุ้ง",
+      "type": "Concept",
+      "id": "ต้มยำกุ้ง"
+    },
+    {
+      "label": "พ.ศ. 2567",
+      "type": "Date",
+      "id": "พ.ศ. 2567"
+    },
+    {
+      "label": "สงกรานต์",
+      "type": "Event",
+      "id": "สงกรานต์"
+    },
+    {
+      "label": "เดือนเมษายน",
+      "type": "Date",
+      "id": "เดือนเมษายน"
+    },
+    {
+      "label": "ถนนข้าวสาร",
+      "type": "Place",
+      "id": "ถนนข้าวสาร"
+    },
+    {
+      "label": "กรุงเทพมหานคร",
+      "type": "Place",
+      "id": "กรุงเทพมหานคร"
     }
   ],
   "edges": [
     {
-      "relation": "BORN_IN",
+      "relation": "LOCATED_IN",
       "source_chunk": 0,
-      "source": "marie curie",
-      "target": "warsaw",
-      "key": 0
-    },
-    {
-      "relation": "BORN_ON",
-      "source_chunk": 0,
-      "source": "marie curie",
-      "target": "1867",
-      "key": 0
-    },
-    {
-      "relation": "STUDIED_AT",
-      "source_chunk": 0,
-      "source": "marie curie",
-      "target": "university of paris",
-      "key": 0
-    },
-    {
-      "relation": "MARRIED_TO",
-      "source_chunk": 0,
-      "source": "marie curie",
-      "target": "pierre curie",
-      "key": 0
-    },
-    {
-      "relation": "MARRIED_ON",
-      "source_chunk": 0,
-      "source": "marie curie",
-      "target": "1895",
-      "key": 0
-    },
-    {
-      "relation": "DISCOVERED",
-      "source_chunk": 0,
-      "source": "marie curie",
-      "target": "polonium",
-      "key": 0
-    },
-    {
-      "relation": "DISCOVERED",
-      "source_chunk": 0,
-      "source": "marie curie",
-      "target": "radium",
-      "key": 0
-    },
-    {
-      "relation": "WON_AWARD",
-      "source_chunk": 0,
-      "source": "marie curie",
-      "target": "nobel prize in physics",
-      "key": 0
-    },
-    {
-      "relation": "WON_AWARD",
-      "source_chunk": 0,
-      "source": "marie curie",
-      "target": "nobel prize in chemistry",
-      "key": 0
-    },
-    {
-      "relation": "FOUNDED",
-      "source_chunk": 0,
-      "source": "marie curie",
-      "target": "radium institute",
-      "key": 0
-    },
-    {
-      "relation": "DISCOVERED",
-      "source_chunk": 0,
-      "source": "pierre curie",
-      "target": "polonium",
-      "key": 0
-    },
-    {
-      "relation": "DISCOVERED",
-      "source_chunk": 0,
-      "source": "pierre curie",
-      "target": "radium",
-      "key": 0
-    },
-    {
-      "relation": "WON_AWARD",
-      "source_chunk": 0,
-      "source": "pierre curie",
-      "target": "nobel prize in physics",
-      "key": 0
-    },
-    {
-      "relation": "NAMED_AFTER",
-      "source_chunk": 0,
-      "source": "polonium",
-      "target": "poland",
-      "key": 0
-    },
-    {
-      "relation": "AWARDED_ON",
-      "source_chunk": 0,
-      "source": "nobel prize in physics",
-      "target": "1903",
-      "key": 0
-    },
-    {
-      "relation": "WON_AWARD",
-      "source_chunk": 0,
-      "source": "henri becquerel",
-      "target": "nobel prize in physics",
-      "key": 0
-    },
-    {
-      "relation": "DISCOVERED",
-      "source_chunk": 0,
-      "source": "henri becquerel",
-      "target": "radioactivity",
-      "key": 0
-    },
-    {
-      "relation": "DISCOVERED_ON",
-      "source_chunk": 0,
-      "source": "radioactivity",
-      "target": "1896",
-      "key": 0
-    },
-    {
-      "relation": "AWARDED_ON",
-      "source_chunk": 0,
-      "source": "nobel prize in chemistry",
-      "target": "1911",
-      "key": 0
-    },
-    {
-      "relation": "AWARDED_ON",
-      "source_chunk": 0,
-      "source": "nobel prize in chemistry",
-      "target": "1935",
-      "key": 0
-    },
-    {
-      "relation": "CHILD_OF",
-      "source_chunk": 0,
-      "source": "irène joliot-curie",
-      "target": "marie curie",
-      "key": 0
-    },
-    {
-      "relation": "CHILD_OF",
-      "source_chunk": 0,
-      "source": "irène joliot-curie",
-      "target": "pierre curie",
-      "key": 0
-    },
-    {
-      "relation": "MARRIED_TO",
-      "source_chunk": 0,
-      "source": "irène joliot-curie",
-      "target": "frédéric joliot",
-      "key": 0
-    },
-    {
-      "relation": "DISCOVERED",
-      "source_chunk": 0,
-      "source": "irène joliot-curie",
-      "target": "artificial radioactivity",
-      "key": 0
-    },
-    {
-      "relation": "WON_AWARD",
-      "source_chunk": 0,
-      "source": "irène joliot-curie",
-      "target": "nobel prize in chemistry",
-      "key": 0
-    },
-    {
-      "relation": "DIRECTOR_OF",
-      "source_chunk": 0,
-      "source": "irène joliot-curie",
-      "target": "radium institute",
-      "key": 0
-    },
-    {
-      "relation": "DISCOVERED",
-      "source_chunk": 0,
-      "source": "frédéric joliot",
-      "target": "artificial radioactivity",
-      "key": 0
-    },
-    {
-      "relation": "WON_AWARD",
-      "source_chunk": 0,
-      "source": "frédéric joliot",
-      "target": "nobel prize in chemistry",
+      "source": "จังหวัดเชียงใหม่",
+      "target": "ภาคเหนือ",
       "key": 0
     },
     {
       "relation": "LOCATED_IN",
       "source_chunk": 0,
-      "source": "radium institute",
-      "target": "paris",
+      "source": "จังหวัดเชียงใหม่",
+      "target": "ประเทศไทย",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "ดอยอินทนนท์",
+      "target": "จังหวัดเชียงใหม่",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "ดอยอินทนนท์",
+      "target": "อุทยานแห่งชาติดอยอินทนนท์",
+      "key": 0
+    },
+    {
+      "relation": "IS",
+      "source_chunk": 0,
+      "source": "ดอยอินทนนท์",
+      "target": "ยอดเขาที่สูงที่สุดในประเทศไทย",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "วัดพระธาตุดอยสุเทพ",
+      "target": "จังหวัดเชียงใหม่",
+      "key": 0
+    },
+    {
+      "relation": "IS",
+      "source_chunk": 0,
+      "source": "ข้าวซอย",
+      "target": "อาหารพื้นเมืองภาคเหนือ",
+      "key": 0
+    },
+    {
+      "relation": "HELD_IN",
+      "source_chunk": 0,
+      "source": "ประเพณียี่เป็ง",
+      "target": "จังหวัดเชียงใหม่",
+      "key": 0
+    },
+    {
+      "relation": "EQUIVALENT_TO",
+      "source_chunk": 0,
+      "source": "ประเพณียี่เป็ง",
+      "target": "ประเพณีลอยกระทง",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "อุทยานประวัติศาสตร์สุโขทัย",
+      "target": "จังหวัดสุโขทัย",
+      "key": 0
+    },
+    {
+      "relation": "REGISTERED_DATE",
+      "source_chunk": 0,
+      "source": "อุทยานประวัติศาสตร์สุโขทัย",
+      "target": "พ.ศ. 2534",
+      "key": 0
+    },
+    {
+      "relation": "REGISTERED",
+      "source_chunk": 0,
+      "source": "ยูเนสโก",
+      "target": "อุทยานประวัติศาสตร์สุโขทัย",
+      "key": 0
+    },
+    {
+      "relation": "REGISTERED",
+      "source_chunk": 0,
+      "source": "ยูเนสโก",
+      "target": "นครประวัติศาสตร์พระนครศรีอยุธยา",
+      "key": 0
+    },
+    {
+      "relation": "REGISTERED",
+      "source_chunk": 0,
+      "source": "ยูเนสโก",
+      "target": "แหล่งโบราณคดีบ้านเชียง",
+      "key": 0
+    },
+    {
+      "relation": "REGISTERED_AS_WORLD_HERITAGE",
+      "source_chunk": 1,
+      "source": "ยูเนสโก",
+      "target": "เขตรักษาพันธุ์สัตว์ป่าทุ่งใหญ่นเรศวร-ห้วยขาแข้ง",
+      "key": 0
+    },
+    {
+      "relation": "REGISTERED_AS_WORLD_HERITAGE",
+      "source_chunk": 1,
+      "source": "ยูเนสโก",
+      "target": "กลุ่มป่าดงพญาเย็น-เขาใหญ่",
+      "key": 0
+    },
+    {
+      "relation": "REGISTERED_INTANGIBLE_CULTURAL_HERITAGE",
+      "source_chunk": 1,
+      "source": "ยูเนสโก",
+      "target": "โขน",
+      "key": 0
+    },
+    {
+      "relation": "REGISTERED_INTANGIBLE_CULTURAL_HERITAGE",
+      "source_chunk": 1,
+      "source": "ยูเนสโก",
+      "target": "นวดไทย",
+      "key": 0
+    },
+    {
+      "relation": "REGISTERED_INTANGIBLE_CULTURAL_HERITAGE",
+      "source_chunk": 1,
+      "source": "ยูเนสโก",
+      "target": "ประเพณีสงกรานต์",
+      "key": 0
+    },
+    {
+      "relation": "REGISTERED_INTANGIBLE_CULTURAL_HERITAGE",
+      "source_chunk": 1,
+      "source": "ยูเนสโก",
+      "target": "ต้มยำกุ้ง",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "นครประวัติศาสตร์พระนครศรีอยุธยา",
+      "target": "จังหวัดพระนครศรีอยุธยา",
+      "key": 0
+    },
+    {
+      "relation": "ORIGINATED_IN",
+      "source_chunk": 0,
+      "source": "ประเพณีลอยกระทง",
+      "target": "จังหวัดสุโขทัย",
+      "key": 0
+    },
+    {
+      "relation": "HELD_AT",
+      "source_chunk": 0,
+      "source": "งานลอยกระทงเผาเทียนเล่นไฟ",
+      "target": "อุทยานประวัติศาสตร์สุโขทัย",
+      "key": 0
+    },
+    {
+      "relation": "ALSO_KNOWN_AS",
+      "source_chunk": 0,
+      "source": "ภาคตะวันออกเฉียงเหนือ",
+      "target": "ภาคอีสาน",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "แหล่งโบราณคดีบ้านเชียง",
+      "target": "จังหวัดอุดรธานี",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "แหล่งโบราณคดีบ้านเชียง",
+      "target": "ภาคอีสาน",
+      "key": 0
+    },
+    {
+      "relation": "REGISTERED_DATE",
+      "source_chunk": 0,
+      "source": "แหล่งโบราณคดีบ้านเชียง",
+      "target": "พ.ศ. 2535",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "ปราสาทหินพนมรุ้ง",
+      "target": "จังหวัดบุรีรัมย์",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "จังหวัดบุรีรัมย์",
+      "target": "ภาคอีสาน",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "จังหวัดเลย",
+      "target": "ภาคอีสาน",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "จังหวัดยโสธร",
+      "target": "ภาคอีสาน",
+      "key": 0
+    },
+    {
+      "relation": "HELD_IN",
+      "source_chunk": 0,
+      "source": "ประเพณีผีตาโขน",
+      "target": "อำเภอด่านซ้าย",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "อำเภอด่านซ้าย",
+      "target": "จังหวัดเลย",
+      "key": 0
+    },
+    {
+      "relation": "HELD_IN",
+      "source_chunk": 0,
+      "source": "ประเพณีบุญบั้งไฟ",
+      "target": "จังหวัดยโสธร",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "จังหวัดภูเก็ต",
+      "target": "ภาคใต้",
+      "key": 0
+    },
+    {
+      "relation": "IS",
+      "source_chunk": 0,
+      "source": "จังหวัดภูเก็ต",
+      "target": "เกาะที่ใหญ่ที่สุดของประเทศไทย",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "จังหวัดกระบี่",
+      "target": "ภาคใต้",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "หมู่เกาะพีพี",
+      "target": "จังหวัดกระบี่",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "หมู่เกาะพีพี",
+      "target": "อุทยานแห่งชาติหาดนพรัตน์ธารา-หมู่เกาะพีพี",
+      "key": 0
+    },
+    {
+      "relation": "PART_OF",
+      "source_chunk": 0,
+      "source": "เกาะพีพีเล",
+      "target": "หมู่เกาะพีพี",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "อ่าวมาหยา",
+      "target": "เกาะพีพีเล",
+      "key": 0
+    },
+    {
+      "relation": "FILMED_AT",
+      "source_chunk": 0,
+      "source": "the beach",
+      "target": "อ่าวมาหยา",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "จังหวัดสุราษฎร์ธานี",
+      "target": "ภาคใต้",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "เกาะสมุย",
+      "target": "จังหวัดสุราษฎร์ธานี",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 0,
+      "source": "เกาะพะงัน",
+      "target": "จังหวัดสุราษฎร์ธานี",
+      "key": 0
+    },
+    {
+      "relation": "HELD_AT",
+      "source_chunk": 0,
+      "source": "ฟูลมูนปาร์ตี้",
+      "target": "เกาะพะงัน",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 1,
+      "source": "จังหวัดกาญจนบุรี",
+      "target": "ภาคตะวันตก",
+      "key": 0
+    },
+    {
+      "relation": "HAS_LANDMARK",
+      "source_chunk": 1,
+      "source": "จังหวัดกาญจนบุรี",
+      "target": "สะพานข้ามแม่น้ำแคว",
+      "key": 0
+    },
+    {
+      "relation": "PART_OF",
+      "source_chunk": 1,
+      "source": "สะพานข้ามแม่น้ำแคว",
+      "target": "ทางรถไฟสายมรณะ",
+      "key": 0
+    },
+    {
+      "relation": "CREATED_IN",
+      "source_chunk": 1,
+      "source": "ทางรถไฟสายมรณะ",
+      "target": "สงครามโลกครั้งที่สอง",
+      "key": 0
+    },
+    {
+      "relation": "COVERS_AREA",
+      "source_chunk": 1,
+      "source": "เขตรักษาพันธุ์สัตว์ป่าทุ่งใหญ่นเรศวร-ห้วยขาแข้ง",
+      "target": "จังหวัดกาญจนบุรี",
+      "key": 0
+    },
+    {
+      "relation": "REGISTERED_IN",
+      "source_chunk": 1,
+      "source": "เขตรักษาพันธุ์สัตว์ป่าทุ่งใหญ่นเรศวร-ห้วยขาแข้ง",
+      "target": "พ.ศ. 2534",
+      "key": 0
+    },
+    {
+      "relation": "REGISTERED_IN",
+      "source_chunk": 1,
+      "source": "กลุ่มป่าดงพญาเย็น-เขาใหญ่",
+      "target": "พ.ศ. 2548",
+      "key": 0
+    },
+    {
+      "relation": "REGISTERED_IN",
+      "source_chunk": 1,
+      "source": "โขน",
+      "target": "พ.ศ. 2561",
+      "key": 0
+    },
+    {
+      "relation": "REGISTERED_IN",
+      "source_chunk": 1,
+      "source": "นวดไทย",
+      "target": "พ.ศ. 2562",
+      "key": 0
+    },
+    {
+      "relation": "REGISTERED_IN",
+      "source_chunk": 1,
+      "source": "ประเพณีสงกรานต์",
+      "target": "พ.ศ. 2566",
+      "key": 0
+    },
+    {
+      "relation": "REGISTERED_IN",
+      "source_chunk": 1,
+      "source": "ต้มยำกุ้ง",
+      "target": "พ.ศ. 2567",
+      "key": 0
+    },
+    {
+      "relation": "OCCURS_IN",
+      "source_chunk": 1,
+      "source": "สงกรานต์",
+      "target": "เดือนเมษายน",
+      "key": 0
+    },
+    {
+      "relation": "LOCATED_IN",
+      "source_chunk": 1,
+      "source": "ถนนข้าวสาร",
+      "target": "กรุงเทพมหานคร",
+      "key": 0
+    },
+    {
+      "relation": "USED_FOR",
+      "source_chunk": 1,
+      "source": "ถนนข้าวสาร",
+      "target": "สงกรานต์",
       "key": 0
     }
   ]
