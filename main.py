@@ -10,7 +10,16 @@ from kg.query import ask, grade
 def paths(args):
     """--domain examples/retail-demo -> (Domain, examples/retail-demo/graph.json)."""
     d = Path(args.domain)
-    return dom.load(d), d / "graph.json"
+    try:
+        return dom.load(d), d / "graph.json"
+    except ValueError as e:
+        raise SystemExit(f"fix these rows, then run again:\n{e}")
+
+
+def load_graph(graph_path):
+    if not graph_path.exists():
+        raise SystemExit(f"{graph_path} not found: build it first with ingest-csv or ingest")
+    return graph.load(graph_path)
 
 
 def cmd_ingest(args):
@@ -47,7 +56,7 @@ def cmd_ingest_csv(args):
 
 def cmd_ask(args):
     d, graph_path = paths(args)
-    g = graph.load(graph_path)
+    g = load_graph(graph_path)
     answer, seeds, facts = ask(g, args.question, args.hops, d)
     if args.verbose:
         print("seeds:", seeds)
@@ -57,12 +66,14 @@ def cmd_ask(args):
 
 def cmd_impact(args):
     d, graph_path = paths(args)
-    g = graph.load(graph_path)
+    g = load_graph(graph_path)
     name = graph.key(d.resolve(args.system) or args.system)
     if name not in g:
         raise SystemExit(f"{args.system!r} is not in the graph")
     hit = graph.impact(g, name)
     print(f"if {g.nodes[name]['label']} goes down, {len(hit)} may be affected:")
+    if not hit and not {d["relation"] for *_, d in g.edges(data=True)} & {"SENDS_TO", "DEPENDS_ON", "PRODUCES"}:
+        print("  (impact follows SENDS_TO / DEPENDS_ON / PRODUCES+CONSUMES; this graph has none of them)")
     for n, (kind, path) in hit.items():
         print(f"  {g.nodes[n]['label']:<14} {kind:<8} {path}")
 
@@ -71,11 +82,11 @@ def cmd_eval(args):
     d, graph_path = paths(args)
     if not (d.path / "questions.md").exists():
         raise SystemExit(f"{d.path}/questions.md not found")
-    g = graph.load(graph_path)
+    g = load_graph(graph_path)
     questions = dom.load_questions(d)
     passed = 0
     for qid, question, expected in questions:
-        answer, seeds, facts = ask(g, question, args.hops, d)
+        answer, seeds, _facts = ask(g, question, args.hops, d)
         verdict = grade(question, expected, answer)
         passed += bool(verdict.get("correct"))
         print(f"{'PASS' if verdict.get('correct') else 'FAIL'}  {qid}: {question}")
@@ -89,15 +100,15 @@ def cmd_eval(args):
 
 
 def cmd_viz(args):
-    d, graph_path = paths(args)
+    _d, graph_path = paths(args)
     out = Path(args.out) if args.out else graph_path.with_suffix(".html")
-    graph.visualize(graph.load(graph_path), out)
+    graph.visualize(load_graph(graph_path), out)
     print(f"open {out}")
 
 
 def cmd_stats(args):
-    d, graph_path = paths(args)
-    g = graph.load(graph_path)
+    _d, graph_path = paths(args)
+    g = load_graph(graph_path)
     print(f"{g.number_of_nodes()} nodes, {g.number_of_edges()} edges")
     for n, deg in sorted(g.degree, key=lambda x: -x[1])[:10]:
         print(f"  {deg:3}  {g.nodes[n]['label']} ({g.nodes[n]['type']})")

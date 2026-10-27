@@ -214,15 +214,17 @@ uv run main.py impact --domain examples/retail-demo "ระบบสมาชิ
 ```
 
 ```
-if CRM goes down, 6 may be affected:
+if CRM goes down, 7 may be affected:
   Coupon Engine  direct   (CRM) <-[DEPENDS_ON]- (Coupon Engine)
   Mobile App     direct   (CRM) <-[DEPENDS_ON]- (Mobile App)
   POS            chain 2  (CRM) <-[DEPENDS_ON]- (Coupon Engine) <-[DEPENDS_ON]- (POS)
   E-commerce     chain 2  (CRM) <-[DEPENDS_ON]- (Coupon Engine) <-[DEPENDS_ON]- (E-commerce)
+  Chatbot        chain 2  (CRM) <-[DEPENDS_ON]- (Coupon Engine) <-[DEPENDS_ON]- (Chatbot)
   ERP            chain 3  (CRM) <-[DEPENDS_ON]- (Coupon Engine) <-[DEPENDS_ON]- (POS) -[SENDS_TO]-> (ERP)
   WMS            chain 3  (CRM) <-[DEPENDS_ON]- (Coupon Engine) <-[DEPENDS_ON]- (E-commerce) -[SENDS_TO]-> (WMS)
 ```
 
+- `Chatbot` มาจากเอกสารที่ ingest ในขั้นที่ 6 ข้อมูลจากตารางและเอกสารรวมกันอยู่ในกราฟเดียว
 - `direct` คือได้รับผลกระทบโดยตรง ส่วน `chain N` คือกระทบต่อเป็นทอดที่ N
 - ผลนี้เป็น **กรณีแย่ที่สุด** เช่น ใน note บอกว่า POS "ชำระด้วยคูปองไม่ได้ แต่ขายปกติได้" ดังนั้น ERP อาจไม่ได้รับผลกระทบจริง ให้คนเป็นคนตัดสินขั้นสุดท้าย
 - กฎที่ใช้: X ล่มแล้ว Y กระทบ เมื่อ `Y DEPENDS_ON X` หรือ `X SENDS_TO Y` หรือ `X PRODUCES ข้อมูล` ที่ `Y CONSUMES`
@@ -317,6 +319,6 @@ uv run main.py eval       --domain $D               # 8. วัดผลกั�
 1. `cp -r examples/retail-demo domains/<โดเมนของคุณ>` แล้วลบ `graph.json` / `graph.html` ทิ้ง
 2. แก้ทั้ง 4 ไฟล์ตามลำดับขั้นที่ 1 → 4 (ใช้ไฟล์ตัวอย่างเป็นต้นแบบ)
 3. รันขั้นที่ 5 → 8 แล้ววนรอบจนผ่านราว 80%
-4. ถ้าต้องการความสามารถที่ยังไม่มี (เช่น ดึงข้อมูลจาก API โดยตรง หรือ export ไป Neo4j) ค่อยให้ AI เขียนเพิ่ม (ดู[บทที่ 5 ข้อ 4.2](05-start-your-own.md#42-สั่ง-ai-ให้ปรับโค้ด))
+4. ถ้าต้องการความสามารถที่ยังไม่มี (เช่น ดึงข้อมูลจาก API โดยตรง หรือ export ไป Neo4j) ค่อยให้ AI เขียนเพิ่ม (ดู[บทที่ 5 ข้อ 4.2](05-start-your-own.md#42-คำสั่งที่มีให้แล้ว-และเมื่อไหร่ต้องให้-ai-เขียนเพิ่ม))
 
 กลับไป: [สารบัญ](README.md)

@@ -60,7 +60,9 @@ def _rows(path: Path):
     # utf-8-sig: Excel's "CSV UTF-8" export starts with a BOM.
     with open(path, newline="", encoding="utf-8-sig") as f:
         for i, row in enumerate(csv.DictReader(f), start=2):
-            yield i, {k: (v or "").strip() for k, v in row.items()}
+            row = {k: (v or "").strip() for k, v in row.items()}
+            if any(row.values()):  # Excel exports often end with ",,,," rows
+                yield i, row
 
 
 def _load_entities(d: Domain, path: Path) -> None:
@@ -143,4 +145,4 @@ def filter_extracted(d: Domain, triples: list[dict]) -> tuple[list[dict], list[s
 def load_questions(d: Domain) -> list[tuple[str, str, str]]:
     """questions.md -> [(id, question, expected answer)]."""
     text = (d.path / "questions.md").read_text()
-    return re.findall(r"^##\s*(Q\d+):\s*(.+?)\s*\n+คำตอบ:\s*(.+?)\s*$", text, re.M)
+    return re.findall(r"^##\s*(Q\d+):\s*(.+?)\s*\n+คำตอบ:\s*(.+?)\s*$", text, re.MULTILINE)

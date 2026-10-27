@@ -53,7 +53,7 @@ def extract_triples(text: str, domain=None) -> list[dict]:
     system = system_prompt(domain)
     for i, c in enumerate(chunk(text)):
         data = chat_json(f"Text:\n{c}", system=system)
-        found = [t for t in data.get("triples", []) if t.get("subject") and t.get("object")]
+        found = [t for t in data.get("triples", []) if t.get("subject") and t.get("relation") and t.get("object")]
         for t in found:
             t["source_chunk"] = i
         triples.extend(found)
